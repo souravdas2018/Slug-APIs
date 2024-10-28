@@ -1,3 +1,5 @@
+## **Take-Home Project**
+
 This exercise is designed to help us evaluate your backend engineering skills, focusing on API design, concurrency handling, and problem-solving in a distributed environment.
 
 The goal is to create a minimal URL shortener service that meets the outlined requirements. You are encouraged to spend a couple of hours on this, aiming for a functional MVP that you’ll demonstrate and discuss during your technical interview.
@@ -31,6 +33,43 @@ Implement a URL shortener service that exposes the following API endpoints:
 4. **API Specifications**  
    Adhere to HTTP standards, including correct status codes and error messages.
 
+---
+
+### **Getting Started**
+
+1. Clone this repository:
+
+2. The repository includes a skeleton of the URL Shortener service, with the following:
+   - `server.py`: Contains FastAPI-based route skeletons
+   - `Makefile`: Facilitates Docker builds and commands
+   - `Dockerfile`: Simplifies containerization if needed
+
+3. You are encouraged to use this FastAPI setup and Dockerfile, but feel free to implement the service in a way that best suits your approach. Please ensure any changes to setup or execution steps are reflected in the README.
+
+
+
+### **Evaluation Criteria**
+
+Your submission will be assessed based on:
+
+1. **Functionality and Completeness**  
+   - Meeting all requirements for URL shortening and redirection
+   - Efficient and scalable short URL generation
+   - Robust handling of edge cases and invalid inputs
+
+2. **Code Quality and Best Practices**  
+   - Clear, well-organized code that follows Python and FastAPI best practices
+   - Thoughtful design decisions, with clean, modular, and maintainable code
+
+3. **Testing and Error Handling**  
+   - Unit tests for core functionalities (e.g., URL shortening, retrieval, and invalid requests)
+   - Comprehensive error handling with meaningful messages
+
+4. **Documentation**  
+   - Clear README instructions on setup, running, and testing
+   - Explanations of design choices and trade-offs in your README or comments
+
+
 ### **Additional if you have time**
 
 - **Custom Short URLs**: Allow users to specify a custom short URL slug (e.g., `/r/my-custom-url`).
@@ -38,48 +77,19 @@ Implement a URL shortener service that exposes the following API endpoints:
 - **Analytics**: Include a tracking mechanism to record how many times each short URL is accessed.
 - **Rate Limiting**: Prevent abuse by limiting the rate of URL shortening requests per user or IP address.
 
-### **Creating venv**
+---
 
-python -m venv env_env
-new_env\Scripts\activate ==> Windows
-source env/bin/activate ==> Mac or Linux
-pip install -r requirements.txt
-deactivate
+### **Submission Guidelines**
 
-### **Runnthe app** ======> uvicorn app.main:app --reload
+1. **README Documentation**: Ensure your README is complete, detailing:
+   - Setup and execution steps
+   - Explanations of design decisions and trade-offs
+   - Any deviations from the original requirements or additional features added
+2. **Testing Instructions**: Provide instructions or Postman collections for testing the endpoints.
 
-### **Process To Testing the APIs TESTING INSTRUCTIONS**
+### **Next Steps**
 
-1. Sign-Up (POST)
-   url = http://127.0.0.1:8000/url/signup
-   Request = {
-        "username": "testuser",
-        "email": "test@example.com",
-        "password": "yourpassword"
-    }
+Be prepared to demo your solution, explain your decisions, and work through further scenarios or live coding challenges based on this project.
 
-2. Log-in (POST)
-   url = http://127.0.0.1:8000/url/login/
-   Request = {
-        "username": "testuser",
-        "password": "yourpassword"
-    }
+Good luck! We look forward to seeing your approach and discussing your solution!
 
-3. URL shorten (Bearer Token Required) (POST)
-   a. Auto-generate Slug
-      url = http://127.0.0.1:8000/url/shorten
-      Request = {
-        "url": "https://github.com/ReevvResearch/Backend-Test"
-      }
-
-   b. Custom-generate Slug
-      url = http://127.0.0.1:8000/url/shorten
-      Request = {
-        "url": "https://github.com/ReevvResearch/Backend-Test",
-        "slug": "tyghTREGH789675"
-      }
-
-4. Actual URL (GET)
-   url = http://localhost:8000/r/{slug}
-
-5. Expiration ==> After 1hr URL can not be accessed 
