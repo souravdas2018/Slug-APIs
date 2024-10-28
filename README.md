@@ -42,4 +42,6 @@ deactivate
 4. Actual URL (GET)
    url = http://localhost:8000/r/{slug}
 
-5. Expiration ==> After 1hr URL can not be accessed 
+5. Expiration ==> After 1hr URL can not be accessed
+
+6. Every time any changes is made in the any app file or somehow the app gets reloaded, login is required
