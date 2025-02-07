@@ -78,6 +78,7 @@ Your submission will be assessed based on:
 - **Rate Limiting**: Prevent abuse by limiting the rate of URL shortening requests per user or IP address.
 
 ---
+### **Creating venv**
 
 ### **Submission Guidelines**
 
@@ -92,4 +93,27 @@ Your submission will be assessed based on:
 Be prepared to demo your solution, explain your decisions, and work through further scenarios or live coding challenges based on this project.
 
 Good luck! We look forward to seeing your approach and discussing your solution!
+
+
+=======
+3. URL shorten (Bearer Token Required) (POST)
+   a. Auto-generate Slug
+      url = http://127.0.0.1:8000/url/shorten
+      Request = {
+        "url": "https://github.com/ReevvResearch/Backend-Test"
+      }
+
+   b. Custom-generate Slug
+      url = http://127.0.0.1:8000/url/shorten
+      Request = {
+        "url": "https://github.com/ReevvResearch/Backend-Test",
+        "slug": "tyghTREGH789675"
+      }
+
+4. Actual URL (GET)
+   url = http://localhost:8000/r/{slug}
+
+5. Expiration ==> After 1hr URL can not be accessed
+
+6. Every time any changes is made in the any app file or somehow the app gets reloaded, login is required
 
